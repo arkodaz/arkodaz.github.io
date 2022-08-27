@@ -18,7 +18,7 @@
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/models/CesiumMan.gltf"></a-asset-item>
         </a-assets>
 
-        <a-marker preset="hiro" cursor="rayOrigin: mouse" id="animated-marker" >
+        <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" preset="hiro">
             <a-entity
                 id="animated-model"
                 gltf-model="#animated-asset"
