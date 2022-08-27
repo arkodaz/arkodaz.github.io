@@ -17,14 +17,14 @@
 </head>
 <!-- test -->
 <body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded arjs='sourceType: webcam;'>
+	<a-scene cursor="rayOrigin: mouse" embedded arjs='sourceType: webcam;'>
 		<a-image onclick="test()" id="obj" height="3sm" width="4sm" position='0 0.5 0' src="hiro.png" rotation="-90 0 0"></a-image>
     <a-marker-camera preset='hiro'></a-marker-camera>	</a-scene>
 <script src="/cam/loadstats.js"></script>
 <script>
-	function test(){
-		alert("salam");
-	}
+	var playthisvid_1 = document.getElementById('obj');
+
+playthisvid_1.addEventListener('click', () => { console.log("it clicks");  })
 </script>
 
 </body>
