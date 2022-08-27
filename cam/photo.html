@@ -1,34 +1,33 @@
-<!DOCTYPE html>
+<!doctype HTML>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    </head>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    
+    <!-- import events.js script -->
+    <script src="event.js"></script>
+    
+    <body style='margin : 0px; overflow: hidden;'>
+        <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
+        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
-	<script src="https://unpkg.com/stein-js-client"></script>
-	<script src="/cam/loadstats.js"></script>
+        <a-assets>
+            <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/models/CesiumMan.gltf"></a-asset-item>
+        </a-assets>
 
-	
-	<!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
-	<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>	
-	<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+        <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='barcode' value='6'>
+            <a-entity
+                id="animated-model"
+                gltf-model="#animated-asset"
+                scale="2">
+            </a-entity>
+        </a-marker>
 
-</head>
-<!-- test -->
-<body style='margin : 0px; overflow: hidden;'>
-	<script>
-		AFRAME.registerComponent("foo", {
-		init: function() {
-		this.el.addEventListener("click", (e)=>{alert("HELLO")})
-		}
-		})
-	</script>
-	
-	<a-scene cursor="rayOrigin: mouse" embedded arjs='sourceType: webcam;'>
-		<a-image onclick="test()" id="obj" height="3sm" width="4sm" position='0 0.5 0' src="hiro.png" rotation="-90 0 0" foo></a-image>
-    <a-marker-camera preset='hiro'></a-marker-camera>	</a-scene>
-<script src="/cam/loadstats.js"></script>
-
-</body>
-
+        <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
+        <a-entity camera></a-entity>
+        </a-scene>
+    </body>
 </html>
