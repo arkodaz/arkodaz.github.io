@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>ARkod.az Kit</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
 	<!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
@@ -13,6 +13,11 @@
 <!-- test -->
 
 <body style='margin : 0px; overflow: hidden;'>
+	<div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; cursor: pointer'>
+		<button  style="width: 100px; height:50px; border-radius:15px; border-style:none; background-color: #df1d42; font-family: 'Poppins'; color: white; font-weight: bolder; ">
+     Form Linki
+    </button>
+	</div>
 	
 	<a-scene embedded arjs='sourceType: webcam;'>
         <a-text id="elem" value="@arkod.az" rotation="-90 0 0" color="#df1d42" position="1 0.6 0"></a-text>
@@ -24,6 +29,13 @@
 
 		var element = document.getElementById("elem");
 		element.setAttribute("value", ""+username);
+
+
+		document.querySelector("button").addEventListener("click", (e)=> {
+
+			window.open("https://forms.gle/Wo87W6HpyaXG3hAR8", "_blank");
+
+		})
 
 	</script>
 </body>

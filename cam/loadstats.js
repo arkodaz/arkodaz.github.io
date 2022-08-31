@@ -19,11 +19,11 @@ var id = pathArray[1];
           set: { stats: stats+1}
         })
         .then(res => {
-          console.log(res);
+          
         });
     }
     if(data[0].statsbool == "FALSE"){
-        console.log("statistics are not enabled. If you want to see, contact with arkod.az")
+        console.log("Statistikalar sizin məhsulunuzda təsdiq olunmayıb. Bizimlə əlaqə saxlayıb");
     };
 
 
