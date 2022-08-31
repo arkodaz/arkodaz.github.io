@@ -15,13 +15,14 @@
 <body style='margin : 0px; overflow: hidden;'>
 	
 	<a-scene embedded arjs='sourceType: webcam;'>
-        <a-text value="@arkod.az" rotation="-90 0 0" position="0 2 0"></a-text>
+        <a-text id="elem" value="@arkod.az" rotation="-90 0 0" position="0 2 0"></a-text>
 		<a-image height="3sm" width="3sm" position='0 0.5 0' src="/cam/kit/asset.png" rotation="-90 0 0"></a-image>
     <a-marker-camera preset='hiro'></a-marker-camera>	</a-scene>
 	<script>
 		var pathArray = window.location.href.split('=');
         var username = pathArray[1];
 
+		var element = document.getElementById("elem");
 		element.setAttribute("value", "made by emin");
 
 	</script>
