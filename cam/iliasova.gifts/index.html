@@ -14,6 +14,7 @@
                 init: function () {
                     var marker = this.el;
                     this.vid = document.querySelector("#vid");
+                    var button = this.vid;
 
                     marker.addEventListener('markerFound', function () {
                         this.toggle = true;
@@ -23,6 +24,9 @@
                     marker.addEventListener('markerLost', function () {
                         this.toggle = false;
                         this.vid.pause();
+                    }.bind(this));
+                    button.addEventListener('click', function () {
+                        alert("Şükür Allaha alındı!")
                     }.bind(this));
                 },
             });
@@ -48,7 +52,7 @@
                     crossorigin
                     webkit-playsinline
                     autoplay
-                    muted
+                    
                     playsinline
                 ></video>
             </a-assets>
@@ -57,10 +61,6 @@
                 
                 preset="hiro"
                 videohandler
-                smooth="true"
-                smoothCount="10"
-                smoothTolerance="0.01"
-                smoothThreshold="5"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
@@ -72,6 +72,8 @@
                     position="0 0.1 0"
                     rotation="-90 0 0"
                     class="clickable"
+                    height="4sm" width="3sm" position='0 0.5 0'
+                    
                     gesture-handler
                 ></a-video>
             </a-marker>
