@@ -13,10 +13,12 @@
 <!-- test -->
 
 <body style='margin : 0px; overflow: hidden;'>
-	
+	<a-assets>
+		<a-video id="src" src="/cam/iliasova.gifts/assetvideo.mp4"></a-video>
+	</a-assets>
 	
 	<a-scene embedded arjs='sourceType: webcam;'>
-		<a-video height="4sm" width="3sm" position='0 0.5 0' src="/cam/iliasova.gifts/assetvideo.mp4" rotation="-90 0 0"></a-video>
+		<a-video height="4sm" width="3sm" position='0 0.5 0' src="#src" rotation="-90 0 0"></a-video>
     <a-marker-camera preset='hiro'></a-marker-camera>	</a-scene>
 
 </body>
