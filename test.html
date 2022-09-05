@@ -27,10 +27,11 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-        <div style='position: fixed;left: 30px;right:30px; top: 10px; width:100%; text-align: center; z-index: 1; cursor: pointer'>
-            <div class="wrapper">
+        <div class="qrup" style='position: fixed;left: 30px;right:30px; top: 10px; width:100%; text-align: center; z-index: 1; cursor: pointer'>
+            <div id="group" class="wrapper">
+                <h3 class="textof">Biznes haqqında rəyinizi bildirin.</h3>
                 <div class="btn-group">
-                    <button class="btn1">
+                    <button  class="btn1">
                         <img src="happy-outline.svg" alt="" width="34" height="34" id="img1">
                     </button>
                     <button class="btn2">
@@ -42,6 +43,8 @@
                 </div>
             </div>
         </div>
+        <script src="load.js"></script>
+
         <a-scene
             vr-mode-ui="enabled: false"
             loading-screen="enabled: false;"
@@ -71,10 +74,52 @@
                 id="markerA"
             >
             <a-image position="0 0.1 0" rotation="-90 0 0" src="#vid" height="2" width="1.478"></a-image>
+            <a-text rotation="-90 0 0" position="0 0 0" value="123test"></a-text>
+
             
             </a-marker>
 
             <a-entity camera></a-entity>
         </a-scene>
+        <script>
+            
+            let btn1 = document.querySelector(".btn1");
+            let btn2 = document.querySelector(".btn2");
+            let btn3 = document.querySelector(".btn3");
+        
+        
+            btn1.addEventListener("click",function(){
+                btn2.style = "opacity: 0; pointer-events: none;";
+                btn3.style = "opacity: 0; pointer-events: none;";
+                localStorage.setItem("sentf","great");
+        
+                btn1.style = "transform: translateX(50px) scale(1.5);";
+                document.getElementById("img1").style.transform = "rotateZ(360deg)";
+
+        
+            });
+            btn2.addEventListener("click",function(){
+                btn1.style = "opacity: 0; pointer-events: none;";
+                btn3.style = "opacity: 0; pointer-events: none;";
+                localStorage.setItem("sentf","normal");
+        
+                btn2.style = "transform: translateX(0) scale(1.5);";
+                document.getElementById("img2").style.transform = "rotateZ(360deg)";
+        
+            });
+        
+            btn3.addEventListener("click",function(){
+                btn1.style = "opacity: 0; pointer-events: none;";
+                btn2.style = "opacity: 0; pointer-events: none;";
+                localStorage.setItem("sentf","bad");
+        
+                btn3.style = "transform: translateX(-50px) scale(1.5);";
+                document.getElementById("img3").style.transform = "rotateZ(360deg)";
+        
+            });
+        
+        
+        
+            </script>
     </body>
 </html>
