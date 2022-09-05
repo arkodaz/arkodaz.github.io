@@ -11,6 +11,8 @@ body {
 
 .wrapper {
     width: auto;
+    margin-top: 500px;
+    margin-left: calc(100vw /2 - 100px);
 }
 .btn-group {
     display: flex;
