@@ -1,0 +1,41 @@
+
+.wrapper {
+    width: auto;
+}
+.btn-group {
+    display: flex;
+}
+
+.btn-group button {
+    width: 43px;
+    border: none;
+    cursor: pointer;
+    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7px;
+    transition: 1200ms transform, 300ms opacity;
+    border-radius: 35px;
+}
+
+button img {
+    transition: 1000ms all;
+}
+
+.btn-group button.active {
+    transform: scale(1.5);
+    /* display: block; */
+}
+
+.btn1 {
+    background-color: #2ecc71;
+}
+
+.btn2 {
+    background-color: #e67e22;
+}
+
+.btn3 {
+    background-color: #e74c3c;
+}

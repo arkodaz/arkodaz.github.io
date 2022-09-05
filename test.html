@@ -5,6 +5,7 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+        <link rel="stylesheet" href="stylebtn.css">
         <script>
             AFRAME.registerComponent('videohandler', {
                 init: function () {
@@ -26,6 +27,21 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
+        <div style='position: fixed;left: 30px;right:30px; top: 10px; width:100%; text-align: center; z-index: 1; cursor: pointer'>
+            <div class="wrapper">
+                <div class="btn-group">
+                    <button class="btn1">
+                        <img src="happy-outline.svg" alt="" width="34" height="34" id="img1">
+                    </button>
+                    <button class="btn2">
+                        <img src="medium-01.svg" alt="" width="34" height="34" id="img2">
+                    </button>
+                    <button class="btn3">
+                        <img src="sad-outline.svg" alt="" width="34" height="34" id="img3">
+                    </button>
+                </div>
+            </div>
+        </div>
         <a-scene
             vr-mode-ui="enabled: false"
             loading-screen="enabled: false;"
